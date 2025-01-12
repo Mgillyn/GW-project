@@ -56,8 +56,8 @@ priors['theta_jn']= Uniform(name= 'theta_jn', minimum=-1, maximum=1, latex_label
 #try pycbc.conversion? m1/m2 from q/Mc or something
 priors['psi']= Uniform(name='psi', minimum=0, maximum=np.pi, boundary= 'periodic', latex_label='$\psi$')
 priors['phase']= Uniform(name='phase', minimum=0, maximum= 2*np.pi, boundary='periodic', latex_label='$\phi$')
-priors['a_1']= Uniform(name= 'a_1', minimum=0, maximum=0.8, latex_label=r'$\a_1$')
-priors['a_2']= Uniform(name= 'a_2', minimum=0, maximum=0.8, latex_label=r'$\a_2$')
+priors['a_1']= Uniform(name= 'a_1', minimum=0, maximum=0.8, latex_label=r'$a_1$')
+priors['a_2']= Uniform(name= 'a_2', minimum=0, maximum=0.8, latex_label=r'$a_2$')
 priors['tilt_1']= bilby.core.prior.analytical.Sine(name= 'tilt_1', minimum=0, maximum=np.pi, latex_label=r'$\theta_1$')
 priors['tilt_2']= bilby.core.prior.analytical.Sine(name= 'tilt_2', minimum=0, maximum=np.pi, latex_label=r'$\theta_2$')
 priors['Difference-azimuthal-spin-angle']=Uniform(name='difference between azimuthal spin angles', minimum=0, maximum=2*np.pi, boundary='periodic', latex_label='$\phi_12$')
