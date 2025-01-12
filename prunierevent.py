@@ -42,7 +42,6 @@ L1.power_spectral_density = bilby.gw.detector.PowerSpectralDensity(
 V1.power_spectral_density= bilby.gw.detector.PowerSpectralDensity(
     frequency_array=V1psd.frequencies.value, psd_array=V1psd.value)
 
-#if sampling mc, q, and component masses, may need to try the ROQ or compromise and remove component masses
 priors= bilby.core.prior.PriorDict()
 priors['chirp_mass']= UniformInComponentsChirpMass(name='chirp_mass', minimum= 0.351, maximum= 0.355, latex_label='$\mathcal{M}_c$')
 priors['mass_ratio']= UniformInComponentsMassRatio(name='mass_ratio', minimum=0.1, maximum=1.0, latex_label='$q$')
@@ -51,9 +50,9 @@ priors['mass_2']= Constraint(name= 'mass_2', minimum= 0.142, maximum= 10, latex_
 priors['dec']= Cosine(name='dec', minimum= -np.pi/2, maximum= np.pi/2, latex_label='$\delta$')
 #declination- angular distance, north or south of celestial equator
 priors['ra']= Uniform(name='ra', minimum=0, maximum= 2*np.pi, boundary= 'periodic', latex_label=r'$\alpha$')
-#boundary argument seems to have worked but is it right?
+
 priors['theta_jn']= Uniform(name= 'theta_jn', minimum=-1, maximum=1, latex_label=r'$\theta_JN$')
-#try pycbc.conversion? m1/m2 from q/Mc or something
+
 priors['psi']= Uniform(name='psi', minimum=0, maximum=np.pi, boundary= 'periodic', latex_label='$\psi$')
 priors['phase']= Uniform(name='phase', minimum=0, maximum= 2*np.pi, boundary='periodic', latex_label='$\phi$')
 priors['a_1']= Uniform(name= 'a_1', minimum=0, maximum=0.8, latex_label=r'$a_1$')
