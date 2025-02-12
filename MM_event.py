@@ -29,8 +29,8 @@ H1.set_strain_data_from_gwpy_timeseries(Hdata)
 L1.set_strain_data_from_gwpy_timeseries(Ldata)
 V1.set_strain_data_from_gwpy_timeseries(Vdata)
 
-psduration= duration*32
-psdstart= tov- psduration
+psduration= duration*24
+psdstart= tov+ psduration
 
 H1_psd_data = TimeSeries.fetch_open_data("H1", psdstart, psdstart + psduration, sample_rate=16384, cache=True)
 L1_psd_data = TimeSeries.fetch_open_data("L1", psdstart, psdstart + psduration, sample_rate=16384, cache=True)
